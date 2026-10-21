@@ -1,179 +1,227 @@
-# Flappy Bird Game
-This project is an implementation of the classic Flappy Bird game in C++.
+# 🐦 Flappy Bird Game in C++
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [How to Play](#how-to-play)
-- [Instructions](#instructions)
-- [Registered Users](#registered-users)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
+A console-based implementation of the classic **Flappy Bird** game using C++. The project features username registration, interactive gameplay, obstacle avoidance, score tracking, and a menu-driven interface.
 
-## Introduction
-This project simulates the famous Flappy Bird game using basic C++ console graphics. It includes features for user registration, gameplay mechanics, and basic user interface.
+## 📑 Table of Contents
 
-## Features
-- User registration with username input.
-- Flappy Bird gameplay with obstacles.
-- Score tracking and game-over functionality.
-- Instructions for playing the game.
-- Viewing previously registered users.
+- [Introduction](#-introduction)
+- [Features](#-features)
+- [Technologies Used](#-technologies-used)
+- [Installation](#-installation)
+- [How to Play](#-how-to-play)
+- [Game Menu](#-game-menu)
+- [Gameplay Mechanics](#-gameplay-mechanics)
+- [Game Output](#-game-output)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
 
+## 🎮 Introduction
 
-## Installation
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/your-username/FlappyBirdGame.git
-    ```
-2. Navigate to the project directory:
-    ```sh
-    cd FlappyBirdGame
-    ```
-3. Compile the code using a C++ compiler:
-Compile the C++ files using your preferred compiler (e.g., g++)
-    ```sh
-    g++ main.cpp -o flappybird
-    ```
+This project recreates the core mechanics of Flappy Bird in a C++ console environment. Players control a bird, navigate through obstacles, and try to achieve the highest possible score.
 
-## How to Play
-# 1.Run the executable:
- ```sh
-    ./flappybird
-  ```
-# 2.Follow the on-screen menu:
-- Register your username.
-- Start the game and use the spacebar to make the bird fly.
-- Avoid obstacles to increase your score.
-- Press any key to go back to the main menu after game over.
-  
-## Game Output
-# 1.Main Menu Output
-When you run the program, it starts with a main menu where users can choose different options:
+A simple menu allows users to register their names, start the game, view instructions, and access registered users.
+
+## ✨ Features
+
+- **User Registration:** Enter a username before playing.
+- **Interactive Gameplay:** Control the bird using the keyboard.
+- **Obstacle Generation:** Navigate through pipes with gaps.
+- **Score Tracking:** Earn points by passing obstacles.
+- **Collision Detection:** End the game when the bird hits an obstacle.
+- **Game Instructions:** View controls and gameplay guidance.
+- **Registered Users:** Access previously registered usernames.
+- **Console Interface:** Navigate through a simple text-based menu.
+
+## 🛠️ Technologies Used
+
+- **Programming Language:** C++
+- **Interface:** Console-based UI
+- **Compiler:** GCC (`g++`) or another compatible C++ compiler
+- **Concepts:** Loops, conditional statements, functions, keyboard input, collision detection, and score management
+
+## 🚀 Installation
+
+### Prerequisites
+
+Install a C++ compiler such as GCC and ensure `g++` is available in your terminal.
+
+### 1. Clone the Repository
+
 ```bash
- -------------------------- 
- |      Flappy Bird       | 
- --------------------------
+git clone https://github.com/usmana0820/FlappyBirdGame.git
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd FlappyBirdGame
+```
+
+### 3. Compile the Program
+
+If the main source file is named `main.cpp`, compile it using:
+
+```bash
+g++ main.cpp -o flappybird
+```
+
+If the project contains multiple `.cpp` files, include the required source files in the compilation command.
+
+### 4. Run the Game
+
+On Linux or macOS:
+
+```bash
+./flappybird
+```
+
+On Windows Command Prompt:
+
+```bash
+flappybird.exe
+```
+
+**Note:** The compilation command assumes the source file is named `main.cpp`. Adjust it if your repository uses a different filename.
+
+## 🕹️ How to Play
+
+1. Launch the executable.
+2. Select an option from the main menu.
+3. Register your username if required.
+4. Start the game.
+5. Press the **Spacebar** to make the bird fly upward.
+6. Avoid the pipes and pass through their gaps.
+7. Earn points by successfully passing obstacles.
+8. After a game over, press a key to return to the menu.
+
+Use the **Esc** key to exit during gameplay only if that behavior is supported by the implementation.
+
+## 📋 Game Menu
+
+The console menu provides the following options:
+
+```text
+--------------------------
+|      Flappy Bird       |
+--------------------------
 1. Register your User Name
 2. Start Game
 3. Instructions
 4. Registered Users
 5. Exit
+
 Select option:
 ```
 
-# 2.Registration Process
-If you choose option 1 (Register your User Name), the output will prompt you to enter your username:
-```bash
- -------------------------- 
- |      Flappy Bird       | 
- --------------------------
-Please Register your Name: [user enters their name]
+### User Registration
+
+When the registration option is selected, the program prompts the player to enter a username.
+
+```text
+--------------------------
+|      Flappy Bird       |
+--------------------------
+Please Register your Name:
 ```
 
-- After entering your name, it will display the main menu again.
+After registration, the player can return to the main menu.
 
+## ⚙️ Gameplay Mechanics
 
-## 3.Starting the Game
-If the user selects option 2 to start the game:
-```bash
- -------------------------- 
- |      Flappy Bird       | 
- --------------------------
+### Bird Movement
 
-FLAPPY BIRD
+The bird starts at a designated position in the console. Pressing the Spacebar moves it upward, while the game's movement logic controls its position over time.
 
-----------
-Control 
--------- 
- Spacebar = jump
-Press any key to start
-```
+### Obstacles
 
+Pipes appear from the right side of the playing area and move toward the left. Each pair contains a gap through which the bird must pass.
 
-## 4.Gameplay
-During gameplay, the console screen resembles:
-```bash
- -------------------------- 
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- |                         |
- -------------------------- 
+### Scoring
+
+The score starts at zero and increases when the bird successfully passes an obstacle pair.
+
+### Collision Detection
+
+If the bird collides with a pipe or another defined boundary, the game ends.
+
+## 🖥️ Game Output
+
+### Gameplay Screen
+
+The console displays the playing area, obstacles, bird position, and current score. A simplified illustration is shown below:
+
+```text
+--------------------------
+|                        |
+|              ***       |
+|                        |
+|                        |
+|      o                 |
+|                        |
+|              ***       |
+|                        |
+--------------------------
 Score: 0
 ```
-- The bird (o) starts at a fixed position (6) within the console window.
-- Pipes (***) start to generate from the right side and move leftward across the screen.
-- Score is displayed on the right side, starting from 0.
 
+*Illustrative output only; the actual console layout may differ.*
 
+### Game Over Screen
 
-# 5.Gameplay Mechanics
-- Bird Movement
-**Flying:** Pressing the spacebar allows the bird (o) to fly upwards, adjusting its position to avoid obstacles (***).
-- Scoring
-**Score Display:** During gameplay, the current score is displayed on the right side of the console:
-- Score: 0
-**Increment:** Each time the bird successfully passes through a pair of obstacles (***), the score increments by 1.
+After a collision, the game displays a game-over message and the final score.
 
-- Obstacles (Pipes)
-**Generation:** Pipes (***) are generated at random heights with a gap ( ) between them for the bird to pass through.
-**Movement:** Pipes move from right to left across the screen at a constant speed.
-
-- Collision Detection
-**Criteria:** If the bird collides with the top or bottom of a pipe (***), the game ends.
-
-  
-
-# 6. Game Over
-When the game ends due to a collision or if the user decides to exit (Esc), the following message is displayed:
-```bash
-Thank you For Playing our game
- --------------------------
--------- Game Over -------
+```text
 --------------------------
-----------Score: 5--------
+|       Game Over        |
+--------------------------
+Score: 5
 
 Press any key to go back to menu.
 ```
 
-## Expected Output
-- Users will interact with the system via a command-line interface.
-- Menus will guide the user to perform various operations.
-- Success and error messages will be displayed accordingly.
+## 📈 Expected Outcomes
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- Understand fundamental C++ programming concepts.
+- Practice keyboard input and console-based interaction.
+- Implement basic game loops and obstacle movement.
+- Apply collision detection and score tracking.
+- Develop a simple menu-driven application.
 
-## Contributing
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Commit your changes (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Create a new Pull Request.
+## 🤝 Contributing
 
-## Contact
-For any questions or suggestions, please contact [usmanazulfiqar2001@gmail.com](mailto:usmanazulfiqar2001@gmail.com).
+Contributions, suggestions, and improvements are welcome.
 
+1. Fork this repository.
+2. Create a feature branch:
 
+   ```bash
+   git checkout -b feature-branch
+   ```
 
+3. Commit your changes:
 
+   ```bash
+   git commit -m "Improve gameplay"
+   ```
+
+4. Push your branch:
+
+   ```bash
+   git push origin feature-branch
+   ```
+
+5. Open a pull request.
+
+## 📄 License
+
+This project is intended to use the MIT License. See the [`LICENSE`](LICENSE) file for details if it is included in the repository.
+
+## 👩‍💻 Contact
+
+**Usmana Zulfiqar**
+
+- GitHub: [@usmana0820](https://github.com/usmana0820)
+- Email: [usmanazulfiqar20@gmail.com](mailto:usmanazulfiqar20@gmail.com)
+
+Feel free to reach out with questions, feedback, or suggestions.
